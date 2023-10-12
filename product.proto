@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+
+service ScrapeService{
+    rpc ProductResponse(ProductRequest) returns (Products);
+}
+
+message Product {
+    optional string name = 1;
+    optional string rating = 2;
+    optional float feedBack = 3;
+    optional float price = 4;
+}
+
+message ProductRequest{}
+
+
+message Products {
+    repeated Product product = 1;
+  }
